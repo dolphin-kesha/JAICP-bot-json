@@ -1,0 +1,62 @@
+{
+    "START":{
+        "QUESTION":"Алло",
+        "ANSWERS": [
+            {
+                "INTENT": "Любой ответ",
+                "NEXT": "HELLO"
+            },
+            {
+                "INTENT": "Автоответчик"
+            },
+            {
+                "INTENT": "Перезвонить"
+            }
+        ],
+        "TYPE": "BLOCK"
+    },
+    "HELLO":{
+        "QUESTION": "Добрый день!  Меня зовут Дарья, я старший администратор сети. Можете ли Вы мне уделить пару минут Вашего времени?",
+        "ANSWERS": [
+            {
+               "INTENT": "Я занят",
+               "NEXT": "CALL_BACK" 
+            },
+            {
+                "INTENT": "Любые слова",
+                "NEXT": "ANY_WORD" 
+             },
+             {
+                "INTENT": "Нет, отстань",
+                "NEXT": "NOT" 
+             },
+             {
+                "INTENT": "Уже звонили",
+                "NEXT": "NOT" 
+             }
+        ],
+        "TYPE": "BLOCK"
+    },
+    "CALL_BACK":{
+        "QUESTION": "Через какое время вам набрать ?",
+        "ANSWERS": [
+            {
+                "INTENT": "Любые слова",
+                "NEXT": "END_1"
+            }
+        ],
+        "TYPE": "BLOCK"
+    },
+    "ANY_WORD":{
+        "QUESTION": "Благодарю",
+        "TYPE": "END"
+    },
+    "NOT":{
+        "QUESTION": "Всего хорошего, досвидания",
+        "TYPE": "END"
+    },
+    "END_1":{
+        "QUESTION": "Хорошо, я наберу позже",
+        "TYPE": "Manager"
+    }
+}
